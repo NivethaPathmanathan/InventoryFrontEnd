@@ -9,7 +9,7 @@
         <label for="ProductName"><b>Product Name:</b></label>
         <input type="ProductName" formControlName="ProductName" placeholder="Product Name" name="ProductName" class="form-control" id="ProductName">
       </div>
-      <div *ngIf="addForm.controls['ProductName'].invalid && (addForm.controls['ProductName'].dirty || addForm.controls['ProductName'].touched || submitted)" class="alert">
+      <div *ngIf="addForm.controls['ProductName'].invalid && (addForm.controls['ProductName'].dirty || addForm.controls['ProductName'].touched || submitted)">
         <div *ngIf="addForm.controls['ProductName'].errors.required" style="color:red;">
         Please enter the Product Name
       </div>
@@ -20,7 +20,7 @@
         <label for="BrandName"><b>Brand Name:</b></label>
         <input formControlName="BrandName" placeholder="Brand Name" name="BrandName" class="form-control" id="BrandName" required>
       </div>
-      <div *ngIf="addForm.controls['BrandName'].invalid && (addForm.controls['BrandName'].dirty || addForm.controls['BrandName'].touched || submitted)" class="alert">
+      <div *ngIf="addForm.controls['BrandName'].invalid && (addForm.controls['BrandName'].dirty || addForm.controls['BrandName'].touched || submitted)">
         <div *ngIf="addForm.controls['BrandName'].errors.required" style="color:red;">
         Please enter the Brand Name
       </div>
@@ -36,6 +36,9 @@
       <div class="form-group">
         <label for="Quantity"><b>Quantity:</b></label>
         <input formControlName="Quantity" placeholder="Quantity" name="Quantity" class="form-control" id="Quantity">
+        <small class="error" *ngIf="addForm.controls['Quantity'].invalid">
+            <div *ngIf="addForm.controls['Quantity'].hasError('pattern')">Only numbers are allowed.</div>
+        </small>
       </div>
       <br/>
 
@@ -43,7 +46,7 @@
     <br/>
       </form>
       </div>
-      <p class="text-left" style = "padding-top:500px;color:red">
+      <p style= "text-align:left; padding-left:300px;color:red">
         Form Status: {{ addForm.status }}
       </p>
   </div>

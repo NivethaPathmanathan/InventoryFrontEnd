@@ -44,7 +44,7 @@ export class AddSalesComponent implements OnInit {
       this.addForm = this.formBuilder.group({
         ProductId:["", Validators.required],
         SalesDate:[""],
-        NoOfSales: ["", Validators.required],
+        NoOfSales: ["", Validators.required, Validators.pattern("[0-9]")],
         CustomerName:["", Validators.required]
       });
 

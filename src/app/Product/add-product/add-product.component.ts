@@ -40,7 +40,7 @@ export class AddProductComponent implements OnInit {
       ProductName:["", Validators.required],
       BrandName: ["", Validators.required],
       Label:["", Validators.required],
-      Quantity:[""]
+      Quantity:["", Validators.pattern("[0-9]*")]
     })
 
   }

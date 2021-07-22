@@ -29,11 +29,10 @@
      <div class="form-group">
       <label for="NoOfSales"><b>Number Of Sales:</b></label>
       <input formControlName="NoOfSales" placeholder="Enter the Number Of Sales" name="NoOfSales" class="form-control" id="NoOfSales" required>
-    </div>
-    <div *ngIf="addForm.controls['NoOfSales'].invalid && (addForm.controls['NoOfSales'].dirty || addForm.controls['NoOfSales'].touched || submitted)" class="alert">
-      <div *ngIf="addForm.controls['NoOfSales'].errors.required" style="color:red;">
-      Please enter the NoOfSales
-    </div>
+      <small class="error" *ngIf="addForm.controls['NoOfSales'].invalid && (addForm.controls['NoOfSales'].dirty || addForm.controls['NoOfSales'].touched)">
+        <div *ngIf="addForm.controls['NoOfSales'].hasError('required')">This field is required.</div>
+        <div *ngIf="addForm.controls['NoOfSales'].hasError('pattern')">Only numbers are allowed.</div>
+    </small>
   </div>
   <br/>
 
@@ -41,7 +40,7 @@
     <label for="CustomerName"><b>Customer Name:</b></label>
     <input formControlName="CustomerName" placeholder="Enter the CustomerName" name="CustomerName" class="form-control" id="CustomerName" required>
   </div>
-  <div *ngIf="addForm.controls['CustomerName'].invalid && (addForm.controls['CustomerName'].dirty || addForm.controls['CustomerName'].touched || submitted)" class="alert">
+  <div *ngIf="addForm.controls['CustomerName'].invalid && (addForm.controls['CustomerName'].dirty || addForm.controls['CustomerName'].touched || submitted)">
     <div *ngIf="addForm.controls['CustomerName'].errors.required" style="color:red;">
     Please enter the Customer Name
   </div>

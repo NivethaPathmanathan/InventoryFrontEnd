@@ -49,7 +49,7 @@ export class AddPurchaseComponent implements OnInit {
     this.addForm = this.formBuilder.group({
       ProductId: ["", Validators.required],
       PurchaseDate: [new Date(), Validators.required],
-      NoReceived: ["", Validators.required],
+      NoReceived: ["", Validators.required, Validators.pattern("[0-9]*")],
       SupplierName: [""]
     });
 
