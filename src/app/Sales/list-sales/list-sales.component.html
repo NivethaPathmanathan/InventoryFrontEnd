@@ -2,14 +2,14 @@
     <div class="conatiner" style="padding-top:20px;background-color:white">
       <div class="col-sm-11" style="padding-top:20px;padding-bottom:20px;padding-left:150px;padding-right:150px;">
         <input class="form-control" type="text" placeholder="Search Here.." [(ngModel)]="searchText"> <br />
-   
-    
+
+
         <div class="text-right">
-          <button class="btn btn-primary" style="background-color:#53047d; color: #e0d7e6;" (click)="addsales()"> Add Sales</button>
+          <button class="btn btn-primary" style="color: #EEEEEE;" (click)="addsales()"> Add Sales</button>
         </div>
-    
+<br/>
         <table class="table table-striped">
-          <thead style="color: #2a0240; background: #e0d7e6;">
+          <thead style="color: #0f044c; background: #787a91;">
             <tr>
               <th>Sales Id</th>
               <th>Sales Date</th>
@@ -26,8 +26,10 @@
               <td>{{sales.NoOfSales}}</td>
               <td>{{ sales.CustomerName}}</td>
               <td>{{sales.ProductId}}</td>
-              <td><button  class="btn btn-primary" style="background-color:#53047d; color: #e0d7e6;" (click)="deletesales(sales)"> Delete</button>
-                <button class="btn btn-primary" style="background-color:#53047d; color: #e0d7e6; margin-left: 20px;" (click)="editsales(sales)"> Edit </button>
+              <td><button class="btn btn-danger" style="color: #e0d7e6;" (click)="deletesales(sales)"> <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+                <button class="btn btn-primary" style="color: #e0d7e6; margin-left: 20px;" (click)="editsales(sales)"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </button>
               </td>
             </tr>
           </tbody>

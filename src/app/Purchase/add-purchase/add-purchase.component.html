@@ -1,5 +1,5 @@
-<div class="col-md-11, container" style="margin-top: 70px; background-color:#e0d7e6; color: #2a0240;">
-  <h2 class="text-center" style="color:#2a0240">Add Purchase</h2>
+<div class="col-md-11, container" style="margin-top: 100px; background-color:#EEEEEE; color: #2a0240; width: 600px;">
+  <h2 class="text-center" style="color:#0f044c">{{isEdit ? 'Edit Purchase' : 'Add Purchase'}}</h2>
   <div class="row">
     <div class="col-sm-11">
 
@@ -7,7 +7,7 @@
 
        <div class="form-group col-sm-6">
         <label for="ProductId"><b>Product Name:</b></label><br>
-      <select formControlName="ProductId" placeholder ="Select Product Name" name="ProductId" id="ProductId" required>
+      <select formControlName="ProductId" placeholder ="Select Product Name" name="ProductId" id="ProductId" class="form-control" style="width:500px" required>
         <option *ngFor="let pro of products" value="{{pro.ProductId}}">
           {{pro.ProductName}}
         </option>
@@ -28,6 +28,7 @@
       </mat-form-field> -->
       Select Purchase Date
     </div>
+    <input formControlName="PurchaseDate" placeholder="Enter the date" name="PurchaseDate" class="form-control" id="PurchaseDate" style="width: 500px;" required>
     </div>
      <br/>
 

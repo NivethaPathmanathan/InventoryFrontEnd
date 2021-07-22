@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/Services/productService/product.service';
 import { Product } from 'src/app/model/product.model';
+import { first } from "rxjs/operators";
 
 @Component({
   selector: 'app-add-product',
@@ -13,7 +14,7 @@ import { Product } from 'src/app/model/product.model';
 export class AddProductComponent implements OnInit {
 
   addForm: FormGroup;
-  submitted = false;
+  submitted : boolean;
   isEdit : boolean;
   product: Product;
 
@@ -46,10 +47,30 @@ export class AddProductComponent implements OnInit {
 
   onSubmit(){
    //debugger;
-    this.submitted = true;
-    if(this.addForm.invalid){
+   this.submitted = true;
+      if(this.addForm.invalid){
       return;
     }
+   let ProductId = this.route.snapshot.paramMap.get('id');
+   if(ProductId){
+     this.isEdit = true;
+    this.productservice.updateproduct(this.addForm.value)
+    .pipe(first())
+    .subscribe(
+      data => {
+        this.toastr.success('Successfully updated!!');
+        this.router.navigate(['list-product']);
+        this.addForm.reset();
+      },
+      error => {
+        alert(error);
+      });
+   }else{
+
+    // if(this.addForm.invalid){
+    //   return;
+    // }
+
     this.productservice.createproduct(this.addForm.value)
     .subscribe(data => {
       this.toastr.success('Successfully added!!');
@@ -62,5 +83,6 @@ export class AddProductComponent implements OnInit {
         alert(error);
       });
   }
+}
 
 }

@@ -10,3 +10,13 @@
 .footer { padding: 1.5rem 0; color: #fff; text-align: center; background-color: #333; }
 .backend-footer { padding: 1.5rem 0; color: #333; text-align: center; background-color: #ccc; }
 .error { color: #ff0000}
+.btn-primary { border-radius: 5px; padding: 5px; background-color: #141e61 !important;
+  /* background: rgb(85 4 4);
+    background: linear-gradient(
+90deg
+, rgb(104 4 12) 12%, rgba(112,4,12,1) 52%, rgba(104,4,12,1) 83%); */
+}
+.body {
+  background: #fff !important;
+}
+

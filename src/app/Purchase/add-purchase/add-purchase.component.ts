@@ -6,6 +6,7 @@ import { Product } from 'src/app/model/product.model';
 import { ProductService } from 'src/app/Services/productService/product.service';
 import { PurchaseService } from 'src/app/Services/purchaseService/purchase.service';
 import { Purchase } from 'src/app/model/purchase.model';
+import { first } from "rxjs/operators";
 
 @Component({
   selector: 'app-add-purchase',
@@ -19,6 +20,7 @@ export class AddPurchaseComponent implements OnInit {
   addForm: FormGroup;
   submitted = false;
   isEdit :boolean;
+  disableSelect = true;
   //model;
 
   //public dateValue: Date = new Date ("05/27/2021");
@@ -36,10 +38,10 @@ export class AddPurchaseComponent implements OnInit {
 
 
   ngOnInit() {
-    let PurchaseID = this.route.snapshot.paramMap.get('id');
-    if(PurchaseID){
+    let PurchaseId = this.route.snapshot.paramMap.get('id');
+    if(PurchaseId){
       this.isEdit = true;
-      this.purchaseservice.getpurchaseById(+PurchaseID)
+      this.purchaseservice.getpurchaseById(+PurchaseId)
       .subscribe(data => {
         this.addForm.setValue(data);
         })
@@ -57,28 +59,45 @@ export class AddPurchaseComponent implements OnInit {
 
   }
 
-  showMsg: boolean = false;
-
-  onSubmit() {
-    // debugger;
+  onSubmit(){
+    //debugger;
     this.submitted = true;
-    if (this.addForm.invalid) {
-      return;
-    }
-    this.purchaseservice.createpurchase(this.addForm.value)
-      .subscribe(data => {
-        this.toastr.success('Successfully added!!');
-        this.router.navigate(['list-purchase']);
-        if (this.addForm.status) {
-          this.showMsg = true;
-          this.addForm.reset();
-        }
-      },
-        error => {
-          alert(error);
-        });
+       if(this.addForm.invalid){
+       return;
+     }
+    let ProductId = this.route.snapshot.paramMap.get('id');
+    if(ProductId){
+      this.isEdit = true;
+     this.purchaseservice.updatepurchase(this.addForm.value)
+     .pipe(first())
+     .subscribe(
+       data => {
+         this.toastr.success('Successfully updated!!');
+         this.router.navigate(['list-purchase']);
+         this.addForm.reset();
+       },
+       error => {
+         alert(error);
+       });
+    }else{
 
-  }
+     // if(this.addForm.invalid){
+     //   return;
+     // }
+
+     this.purchaseservice.createpurchase(this.addForm.value)
+     .subscribe(data => {
+       this.toastr.success('Successfully added!!');
+       this.router.navigate(['list-purchase']);
+       if(this.addForm.status){
+         this.addForm.reset();
+       }
+     },
+       error => {
+         alert(error);
+       });
+   }
+ }
 
 
 }

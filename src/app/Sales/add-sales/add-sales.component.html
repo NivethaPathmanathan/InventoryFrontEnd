@@ -1,5 +1,5 @@
-<div class="col-md-11, container" style="margin-top: 70px; background-color:#e0d7e6; color: #2a0240;">
-  <h2 class="text-center" style="color:#2a0240">Add Sales</h2>
+<div class="col-md-11, container" style="margin-top: 100px; background-color:#EEEEEE; color: #2a0240; width: 600px;">
+  <h2 class="text-center" style="color:#0f044c">{{isEdit ? 'Edit Sales' : 'Add Sales'}}</h2>
   <div class="row">
     <div class="col-sm-11">
 
@@ -7,7 +7,7 @@
 
         <div class="form-group col-sm-6">
           <label for="ProductId"><b>Product Name:</b></label><br>
-        <select formControlName="ProductId" placeholder ="Select Product Name" name="ProductId" id="ProductId" required>
+        <select formControlName="ProductId" placeholder ="Select Product Name" name="ProductId" id="ProductId" class = "form-control" style="width: 500px;" required>
           <option *ngFor="let pro of products" value="{{pro.ProductId}}">
             {{pro.ProductName}}
           </option>
@@ -23,6 +23,7 @@
       <div class = "error" *ngIf="addForm.controls['SalesDate'].invalid && addForm.controls['SalesDate'].touched">
         Select Sales Date
       </div>
+      <input formControlName="SalesDate" placeholder="Enter the date" name="SalesDate" class="form-control" id="SalesDate" style="width: 500px;" required>
       </div>
 
      <div class="form-group">
@@ -47,7 +48,7 @@
 </div>
 <br/>
 
-        <button type="Submit"  class="btn btn-primary" style="background-color:#53047d; color: #e0d7e6;"><b>{{isEdit ? 'Update' : 'Add Sales'}}</b></button>
+        <button type="Submit"  class="btn btn-primary" style="color: #e0d7e6;"><b>{{isEdit ? 'Update' : 'Add Sales'}}</b></button>
       </form>
       </div>
 

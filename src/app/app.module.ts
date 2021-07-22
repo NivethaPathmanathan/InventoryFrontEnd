@@ -11,7 +11,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { RouterModule } from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { UserPipe } from './user.pipe';
+import { UserPipe } from './pipe/user.pipe';
 import { AddSalesComponent } from './Sales/add-sales/add-sales.component';
 import { ListSalesComponent } from './Sales/list-sales/list-sales.component';
 import { AddPurchaseComponent } from './Purchase/add-purchase/add-purchase.component';

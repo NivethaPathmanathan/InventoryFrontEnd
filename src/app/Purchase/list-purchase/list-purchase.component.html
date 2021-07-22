@@ -1,15 +1,15 @@
-<h2 class="text-center" style="margin-top: 70px; color:#2a0240"> Purchase Details</h2>
-<div class="conatiner" style="padding-top:20px;background-color:white">
-  <div class="col-sm-11" style="padding-top:20px;padding-bottom:20px;padding-left:150px;padding-right:150px;">
+<h2 class="text-center" style="margin-top: 70px; color:#0f044c"> Purchase Details</h2>
+<div class="container container-box-shadow" style="padding-top:20px;background-color:white">
+  <div class="col-sm-11" >
     <input class="form-control" type="text" placeholder="Search Here.." [(ngModel)]="searchText"> <br />
 
 
     <div class="text-right">
-      <button class="btn btn-primary" style="background-color:#53047d; color: #e0d7e6;" (click)="addpurchase()"> Add Purchase</button>
+      <button class="btn btn-primary" style="color: #EEEEEE;" (click)="addpurchase()"> Add Purchase</button>
     </div>
     <br/>
     <table class="table table-striped">
-      <thead style="color: #2a0240; background: #e0d7e6;">
+      <thead style="color: #0f044c; background: #787a91;">
         <tr>
           <th>Purchase Id</th>
           <th>Purchase Date</th>
@@ -26,8 +26,10 @@
           <td>{{purchase.NoReceived}}</td>
           <td>{{ purchase.SupplierName}}</td>
           <td>{{purchase.ProductName}}</td>
-          <td><button class="btn btn-primary" style="background-color:#53047d; color: #e0d7e6;" (click)="deletepurchase(purchase)"> Delete</button>
-            <button class="btn btn-primary" style="background-color:#53047d; color: #e0d7e6; margin-left: 20px;" (click)="editpurchase(purchase)"> Edit</button>
+          <td><button class="btn btn-danger" style="color: #e0d7e6;" (click)="deletepurchase(purchase)"> <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+            <button class="btn btn-primary" style="color: #e0d7e6; margin-left: 20px;" (click)="editpurchase(purchase)"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </button>
           </td>
         </tr>
       </tbody>
