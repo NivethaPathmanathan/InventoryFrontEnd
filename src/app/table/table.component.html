@@ -6,20 +6,21 @@
             <tr>
               <th>Product Id</th>
               <th>Product Name</th>
-              <th>Brand Name</th>
-              <th>Label</th>
               <th>Quantity</th>
+              <th>No Recieved</th>
+              <th>No of Sales</th>
               <th>Inventory on Hand</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of product | paginate: { itemsPerPage: 6, currentPage: p }">
-              <td>{{product.ProductId}}</td>
-              <td>{{product.ProductName}}</td>
-              <td>{{product.BrandName}}</td>
-              <td>{{product.Label}}</td>
-              <td>{{product.Quantity}}</td>
-              <td>{{product.Quantity}}</td>
+            <tr *ngFor="let pro of product | paginate: { itemsPerPage: 6, currentPage: p }">
+              <td>{{pro.ProductId}}</td>
+              <td>{{pro.ProductName}}</td>
+              <td>{{pro.Quantity}}</td>
+              <td>{{pro.NoReceived}}</td>
+              <td>{{pro.NoOfSales}}</td>
+              <td>{{ pro.NoOfSales > 0 ?  (pro.Quantity + pro.NoReceived) - pro.NoOfSales : pro.Quantity + pro.NoReceived }}</td>
+
             </tr>
           </tbody>
    </table>

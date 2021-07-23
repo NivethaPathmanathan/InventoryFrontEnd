@@ -20,11 +20,11 @@
 
       <div class="form-group col-sm-6">
         <label for="SalesDate"><b>Sales Date:</b></label><br>
+        <input formControlName="SalesDate" bsDatepicker placeholder="Select the sales date" name="SalesDate" class="form-control" id="SalesDate" style="width: 500px;" required>
       <div class = "error" *ngIf="f.SalesDate.invalid && f.SalesDate.touched">
         Select Sales Date
       </div>
-      <input formControlName="SalesDate" placeholder="Enter the date" name="SalesDate" class="form-control" id="SalesDate" style="width: 500px;">
-      </div>
+    </div>
 
      <div class="form-group">
       <label for="NoOfSales"><b>Number Of Sales:</b></label>
@@ -40,9 +40,7 @@
   <div class="form-group">
     <label for="CustomerName"><b>Customer Name:</b></label>
     <input formControlName="CustomerName" placeholder="Enter the CustomerName" name="CustomerName" class="form-control" id="CustomerName">
-  </div>
-  <div *ngIf="f.CustomerName.invalid && (f.CustomerName.dirty || f.CustomerName.touched || submitted)">
-    <div *ngIf="f.CustomerName.errors.required" style="color:red;">
+  <div *ngIf="f.CustomerName.invalid && (f.CustomerName.dirty || f.CustomerName.touched || submitted) && f.CustomerName.errors.required" style="color:red;">
     Please enter the Customer Name
   </div>
 </div>
