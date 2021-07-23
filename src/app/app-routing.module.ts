@@ -10,9 +10,10 @@ import { ListSalesComponent } from './Sales/list-sales/list-sales.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
-  { path: '', component: HeaderComponent },
+  { path: '', component: TableComponent },
   { path: "add-product", component: AddProductComponent},
   { path: "add-product/:id", component: AddProductComponent },
   { path: 'list-product', component: ListProductComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: "add-sales/:id", component: AddSalesComponent },
   { path: 'list-sales', component: ListSalesComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
+  { path: 'signup', component: SignupComponent },
+  { path: 'table', component : TableComponent}
 ];
 
 

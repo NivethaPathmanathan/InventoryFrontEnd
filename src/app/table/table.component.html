@@ -1,0 +1,82 @@
+<div class="col-md-11, container" style="margin-top: 100px; background-color:#EEEEEE; color: #2a0240; width: 1000px;">
+  <h2 class="text-center" style="margin-top: 70px; color:#141e61">My Inventory Manager</h2>
+  <div>
+   <table class="table table-striped">
+          <thead style="color: #0f044c; background: #787a91;">
+            <tr>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th>Brand Name</th>
+              <th>Label</th>
+              <th>Quantity</th>
+              <th>Inventory on Hand</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of product | paginate: { itemsPerPage: 6, currentPage: p }">
+              <td>{{product.ProductId}}</td>
+              <td>{{product.ProductName}}</td>
+              <td>{{product.BrandName}}</td>
+              <td>{{product.Label}}</td>
+              <td>{{product.Quantity}}</td>
+              <td>{{product.Quantity}}</td>
+            </tr>
+          </tbody>
+   </table>
+        <ul class="pagination">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </ul>
+  </div>
+
+<div>
+  <table class="table table-striped">
+    <thead style="color: #0f044c; background: #787a91;">
+      <tr>
+        <th>Purchase Id</th>
+        <th>Product Name</th>
+        <th>Purchase Date</th>
+        <th>No Received</th>
+        <th>Supplier Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let purchase of purchase | paginate: { itemsPerPage: 6, currentPage: p }">
+        <td>{{purchase.PurchaseId}}</td>
+        <td>{{purchase.ProductName}}</td>
+        <td>{{purchase.PurchaseDate}}</td>
+        <td>{{purchase.NoReceived}}</td>
+        <td>{{ purchase.SupplierName}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ul class="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </ul>
+</div>
+
+<div>
+  <table class="table table-striped">
+    <thead style="color: #0f044c; background: #787a91;">
+      <tr>
+        <th>Sales Id</th>
+        <th>Product Id</th>
+        <th>Sales Date</th>
+        <th>No Of Sales</th>
+        <th>Customer Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sales of sales | paginate: { itemsPerPage: 6, currentPage: p }">
+        <td>{{sales.SalesId}}</td>
+        <td>{{sales.ProductId}}</td>
+        <td>{{sales.SalesDate}}</td>
+        <td>{{sales.NoOfSales}}</td>
+        <td>{{ sales.CustomerName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <ul class="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </ul>
+</div>

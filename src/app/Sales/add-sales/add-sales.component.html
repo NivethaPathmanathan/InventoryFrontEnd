@@ -7,7 +7,7 @@
 
         <div class="form-group col-sm-6">
           <label for="ProductId"><b>Product Name:</b></label><br>
-        <select formControlName="ProductId" placeholder ="Select Product Name" name="ProductId" id="ProductId" class = "form-control" style="width: 500px;" required>
+        <select formControlName="ProductId" placeholder ="Select Product Name" name="ProductId" id="ProductId" class = "form-control" style="width: 500px;">
           <option *ngFor="let pro of products" value="{{pro.ProductId}}">
             {{pro.ProductName}}
           </option>
@@ -23,22 +23,23 @@
       <div class = "error" *ngIf="f.SalesDate.invalid && f.SalesDate.touched">
         Select Sales Date
       </div>
-      <input formControlName="SalesDate" placeholder="Enter the date" name="SalesDate" class="form-control" id="SalesDate" style="width: 500px;" required>
+      <input formControlName="SalesDate" placeholder="Enter the date" name="SalesDate" class="form-control" id="SalesDate" style="width: 500px;">
       </div>
 
      <div class="form-group">
       <label for="NoOfSales"><b>Number Of Sales:</b></label>
-      <input formControlName="NoOfSales" placeholder="Enter the Number Of Sales" name="NoOfSales" class="form-control" id="NoOfSales" required>
-      <small class="error" *ngIf="f.NoOfSales.invalid && (f.NoOfSales.dirty || f.NoOfSales.touched)">
+      <input formControlName="NoOfSales" placeholder="Enter the Number Of Sales" name="NoOfSales" class="form-control" id="NoOfSales">
+      <div class="error" *ngIf="f.NoOfSales.invalid && (f.NoOfSales.dirty || f.NoOfSales.touched)">
         <div *ngIf="f.NoOfSales.hasError('required')">This field is required.</div>
         <div *ngIf="f.NoOfSales.hasError('pattern')">Only numbers are allowed.</div>
-    </small>
+      </div>
   </div>
   <br/>
 
+
   <div class="form-group">
     <label for="CustomerName"><b>Customer Name:</b></label>
-    <input formControlName="CustomerName" placeholder="Enter the CustomerName" name="CustomerName" class="form-control" id="CustomerName" required>
+    <input formControlName="CustomerName" placeholder="Enter the CustomerName" name="CustomerName" class="form-control" id="CustomerName">
   </div>
   <div *ngIf="f.CustomerName.invalid && (f.CustomerName.dirty || f.CustomerName.touched || submitted)">
     <div *ngIf="f.CustomerName.errors.required" style="color:red;">

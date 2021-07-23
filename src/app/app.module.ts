@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
+import { TableComponent } from './table/table.component';
 // import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
@@ -38,7 +39,8 @@ import { ToastrModule } from 'ngx-toastr';
     ListPurchaseComponent,
     HeaderComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
