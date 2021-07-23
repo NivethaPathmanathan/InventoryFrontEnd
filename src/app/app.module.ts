@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { TableComponent } from './table/table.component';
 // import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -49,13 +50,13 @@ import { TableComponent } from './table/table.component';
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     HttpClientModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    // BsDatepickerModule,
     RouterModule.forRoot([]),
     ToastrModule.forRoot({
-      positionClass :'toast-bottom-right'
+      positionClass : 'toast-bottom-right'
     })
   ],
   providers: [ProductService, DatePipe],
