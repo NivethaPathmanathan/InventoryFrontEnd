@@ -23,7 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
-// import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -47,13 +47,13 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     HttpClientModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    // BsDatepickerModule,
     RouterModule.forRoot([]),
     ToastrModule.forRoot({
-      positionClass :'toast-bottom-right'
+      positionClass : 'toast-bottom-right'
     })
   ],
   providers: [ProductService, DatePipe],

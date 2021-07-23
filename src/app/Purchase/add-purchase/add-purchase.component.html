@@ -21,14 +21,9 @@
     <div class="form-group col-sm-6">
       <label for="PurchaseDate"><b>Purchase Date:</b></label><br>
     <div class = "error" *ngIf="f.PurchaseDate.invalid && f.PurchaseDate.touched">
-      <!-- <mat-form-field class="wm-datepicker">
-        <input [matDatepicker]="picker" matInput >
-        <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
-        <mat-datepicker #picker panelClass="wm-calendar"  ></mat-datepicker>
-      </mat-form-field> -->
       Select Purchase Date
     </div>
-    <input formControlName="PurchaseDate" placeholder="Enter the date" name="PurchaseDate" class="form-control" id="PurchaseDate" style="width: 500px;" required>
+    <input formControlName="PurchaseDate" bsDatepicker placeholder="Enter the date" name="PurchaseDate" class="form-control" id="PurchaseDate" style="width: 500px;" required>
     </div>
      <br/>
 
