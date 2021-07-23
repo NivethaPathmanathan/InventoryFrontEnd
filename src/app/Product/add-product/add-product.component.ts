@@ -45,6 +45,10 @@ export class AddProductComponent implements OnInit {
 
   }
 
+  get f(){
+    return this.addForm.controls
+  }
+
   onSubmit(){
    //debugger;
    this.submitted = true;

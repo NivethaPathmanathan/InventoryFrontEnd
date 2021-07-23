@@ -9,8 +9,8 @@
         <label for="ProductName"><b>Product Name:</b></label>
         <input type="ProductName" formControlName="ProductName" placeholder="Product Name" name="ProductName" class="form-control" id="ProductName">
       </div>
-      <div *ngIf="addForm.controls['ProductName'].invalid && (addForm.controls['ProductName'].dirty || addForm.controls['ProductName'].touched || submitted)">
-        <div *ngIf="addForm.controls['ProductName'].errors.required" style="color:red;">
+      <div *ngIf="f.ProductName.invalid && (f.ProductName.dirty || f.ProductName.touched || submitted)">
+        <div *ngIf="f.ProductName.errors.required" style="color:red;">
         Please enter the Product Name
       </div>
      </div>
@@ -20,8 +20,8 @@
         <label for="BrandName"><b>Brand Name:</b></label>
         <input formControlName="BrandName" placeholder="Brand Name" name="BrandName" class="form-control" id="BrandName" required>
       </div>
-      <div *ngIf="addForm.controls['BrandName'].invalid && (addForm.controls['BrandName'].dirty || addForm.controls['BrandName'].touched || submitted)">
-        <div *ngIf="addForm.controls['BrandName'].errors.required" style="color:red;">
+      <div *ngIf="f.BrandName.invalid && (f.BrandName.dirty || f.BrandName.touched || submitted)">
+        <div *ngIf="f.BrandName.errors.required" style="color:red;">
         Please enter the Brand Name
       </div>
     </div>
@@ -36,8 +36,8 @@
       <div class="form-group">
         <label for="Quantity"><b>Quantity:</b></label>
         <input formControlName="Quantity" placeholder="Quantity" name="Quantity" class="form-control" id="Quantity">
-        <small class="error" *ngIf="addForm.controls['Quantity'].invalid">
-            <div *ngIf="addForm.controls['Quantity'].hasError('pattern')">Only numbers are allowed.</div>
+        <small class="error" *ngIf="f.Quantity.invalid">
+            <div *ngIf="f.Quantity.hasError('pattern')">Only numbers are allowed.</div>
         </small>
       </div>
       <br/>
